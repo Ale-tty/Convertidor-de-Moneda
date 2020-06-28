@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CurrencyRateConverter.Views.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True">
+    <!--
+        Consultar la información de conexión a red ya sea Wifi o Datos móviles con implementación
+        especifica de la plataforma utilizando para ello el servicio de dependencias.
+    -->
+
+    <!--
+        Almacenar el valor del dólar con respecto a las demás monedas actualizado
+        al dia de hoy en una base de datos a manera de poder consultar la información de
+        las divisas de los días anteriores.
+    -->
+    <StackLayout>
+        <Label
+            FontSize="Large"
+            HorizontalTextAlignment="Center"
+            Text="{Binding Total}" />
+
+        <Entry Placeholder="Monto" Text="{Binding Monto}" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Escoge el origen:" />
+            <Label x:Name="origin" />
+        </StackLayout>
+        <Picker Title="Origen" SelectedItem="{Binding BaseO}">
+            <Picker.Items>
+                <x:String>AED</x:String>
+                <x:String>ARS</x:String>
+                <x:String>AUD</x:String>
+                <x:String>BGN</x:String>
+                <x:String>BRL</x:String>
+                <x:String>BSD</x:String>
+                <x:String>CAD</x:String>
+                <x:String>CHF</x:String>
+                <x:String>CLP</x:String>
+                <x:String>CNY</x:String>
+                <x:String>COP</x:String>
+                <x:String>CZK</x:String>
+                <x:String>DKK</x:String>
+                <x:String>DOP</x:String>
+                <x:String>EGP</x:String>
+                <x:String>EUR</x:String>
+                <x:String>FJD</x:String>
+                <x:String>GBP</x:String>
+                <x:String>GTQ</x:String>
+                <x:String>HKD</x:String>
+                <x:String>HRK</x:String>
+                <x:String>HUF</x:String>
+                <x:String>IDR</x:String>
+                <x:String>ILS</x:String>
+                <x:String>INR</x:String>
+                <x:String>ISK</x:String>
+                <x:String>JPY</x:String>
+                <x:String>KRW</x:String>
+                <x:String>KZT</x:String>
+                <x:String>MXN</x:String>
+                <x:String>MYR</x:String>
+                <x:String>NOK</x:String>
+                <x:String>NZD</x:String>
+                <x:String>PAB</x:String>
+                <x:String>PEN</x:String>
+                <x:String>PHP</x:String>
+                <x:String>PKR</x:String>
+                <x:String>PLN</x:String>
+                <x:String>PYG</x:String>
+                <x:String>RON</x:String>
+                <x:String>RUB</x:String>
+                <x:String>SAR</x:String>
+                <x:String>SEK</x:String>
+                <x:String>SGD</x:String>
+                <x:String>THB</x:String>
+                <x:String>TRY</x:String>
+                <x:String>TWD</x:String>
+                <x:String>UAH</x:String>
+                <x:String>USD</x:String>
+                <x:String>UYU</x:String>
+                <x:String>ZAR</x:String>
+            </Picker.Items>
+        </Picker>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Escoge el destino:" />
+            <Label x:Name="destino" />
+        </StackLayout>
+        <Picker Title="Destino" SelectedItem="{Binding BaseD}">
+            <Picker.Items>
+                <x:String>AED</x:String>
+                <x:String>ARS</x:String>
+                <x:String>AUD</x:String>
+                <x:String>BGN</x:String>
+                <x:String>BRL</x:String>
+                <x:String>BSD</x:String>
+                <x:String>CAD</x:String>
+                <x:String>CHF</x:String>
+                <x:String>CLP</x:String>
+                <x:String>CNY</x:String>
+                <x:String>COP</x:String>
+                <x:String>CZK</x:String>
+                <x:String>DKK</x:String>
+                <x:String>DOP</x:String>
+                <x:String>EGP</x:String>
+                <x:String>EUR</x:String>
+                <x:String>FJD</x:String>
+                <x:String>GBP</x:String>
+                <x:String>GTQ</x:String>
+                <x:String>HKD</x:String>
+                <x:String>HRK</x:String>
+                <x:String>HUF</x:String>
+                <x:String>IDR</x:String>
+                <x:String>ILS</x:String>
+                <x:String>INR</x:String>
+                <x:String>ISK</x:String>
+                <x:String>JPY</x:String>
+                <x:String>KRW</x:String>
+                <x:String>KZT</x:String>
+                <x:String>MXN</x:String>
+                <x:String>MYR</x:String>
+                <x:String>NOK</x:String>
+                <x:String>NZD</x:String>
+                <x:String>PAB</x:String>
+                <x:String>PEN</x:String>
+                <x:String>PHP</x:String>
+                <x:String>PKR</x:String>
+                <x:String>PLN</x:String>
+                <x:String>PYG</x:String>
+                <x:String>RON</x:String>
+                <x:String>RUB</x:String>
+                <x:String>SAR</x:String>
+                <x:String>SEK</x:String>
+                <x:String>SGD</x:String>
+                <x:String>THB</x:String>
+                <x:String>TRY</x:String>
+                <x:String>TWD</x:String>
+                <x:String>UAH</x:String>
+                <x:String>USD</x:String>
+                <x:String>UYU</x:String>
+                <x:String>ZAR</x:String>
+            </Picker.Items>
+        </Picker>
+        <Label Text="Escoge la fecha" />
+        <DatePicker
+            Date="{Binding Fecha}"
+            Format="D"
+            VerticalOptions="CenterAndExpand" />
+        <Button Command="{Binding ConvertCommand}" Text="Convertir" />
+        <Button Command="{Binding CleanCommand}" Text="Limpiar" />
+        <Button Command="{Binding CloseCommand}" Text="Salir" />
+    </StackLayout>
+</ContentPage>
